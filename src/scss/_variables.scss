@@ -1,0 +1,48 @@
+// Colors — バイオレット（テコ・増幅） + アンバー（次の一歩・行動）
+$color-bg: #f4f2fb;
+$color-surface: #ffffff;
+$color-surface-2: #ece8f7;
+$color-surface-3: #e0d9f2;
+$color-primary: #6d28d9;
+$color-primary-hover: #5b21b6;
+$color-accent: #f59e0b;
+$color-accent-hover: #d97706;
+$color-danger: #dc2626;
+$color-text: #1e1b2e;
+$color-text-muted: #6b6786;
+$color-border: #ddd6f0;
+
+// Quadrant tones
+$color-go: #16a34a; // 今すぐやる
+$color-build: #6d28d9; // 仕組み化して取り組む
+$color-gap: #64748b; // スキマ時間で
+$color-trim: #dc2626; // やめる・減らす・任せる
+
+// Status colors
+$color-success: #16a34a;
+
+// Typography
+$font-family: 'Noto Sans JP', sans-serif;
+$font-size-xs: 11px;
+$font-size-sm: 13px;
+$font-size-base: 15px;
+$font-size-lg: 18px;
+$font-size-xl: 22px;
+$font-size-2xl: 28px;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+
+// Border radius
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
