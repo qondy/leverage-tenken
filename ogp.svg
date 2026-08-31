@@ -1,30 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="hc-stroke" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e11d48"/>
-      <stop offset="100%" stop-color="#0891b2"/>
-    </linearGradient>
-    <radialGradient id="hc-glow" cx="50%" cy="45%" r="45%">
-      <stop offset="0%" stop-color="#e11d48" stop-opacity="0.28"/>
+    <radialGradient id="wash" cx="50%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#e11d48" stop-opacity="0.08"/>
       <stop offset="100%" stop-color="#e11d48" stop-opacity="0"/>
     </radialGradient>
-    <pattern id="hc-dots" width="34" height="34" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.2" fill="#ffffff" opacity="0.05"/>
-    </pattern>
   </defs>
-  <rect width="1200" height="630" fill="#0a0a12"/>
-  <rect width="1200" height="630" fill="url(#hc-dots)"/>
-  <rect width="1200" height="630" fill="url(#hc-glow)"/>
-  <rect x="170" y="80" width="860" height="470" rx="28" fill="#ffffff" opacity="0.03"/>
-  <rect x="170" y="80" width="860" height="470" rx="28" fill="none" stroke="url(#hc-stroke)" stroke-width="2"/>
-  <g stroke="#e11d48" stroke-width="2.5" opacity="0.85">
-    <path d="M130 115 V75 H170" fill="none"/>
-    <path d="M1030 75 H1070 V115" fill="none"/>
-    <path d="M1070 510 V550 H1030" fill="none"/>
-    <path d="M170 550 H130 V510" fill="none"/>
-  </g>
-  <rect x="96" y="64" width="90" height="46" rx="10" fill="none" stroke="#e11d48" stroke-width="1.5"/><text x="141.0" y="94" font-size="20" font-weight="700" fill="#e11d48" text-anchor="middle" font-family="'Noto Sans JP', sans-serif">仕事</text>
-  <g transform="translate(600 220) scale(5.4) translate(-32 -32)" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="20" y1="12" x2="20" y2="52"/><line x1="32" y1="12" x2="32" y2="52"/><line x1="44" y1="12" x2="44" y2="52"/><circle cx="20" cy="24" r="5" fill="#ffffff" stroke="none"/><circle cx="32" cy="38" r="5" fill="#ffffff" stroke="none"/><circle cx="44" cy="18" r="5" fill="#ffffff" stroke="none"/></g>
-  <rect x="440" y="352" width="320" height="1.5" fill="url(#hc-stroke)" opacity="0.6"/>
-  <text x="600" y="460" font-size="54" font-weight="900" text-anchor="middle" fill="#ffffff" font-family="'Noto Sans JP', sans-serif">レバレッジ点検</text>
+  <rect width="1200" height="630" fill="#000000"/>
+  <rect width="1200" height="630" fill="url(#wash)"/>
+  <text x="600" y="140" font-size="26" font-weight="600" letter-spacing="4" text-anchor="middle" fill="#98989d" font-family="-apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif">仕事</text>
+  <g transform="translate(600 275) scale(3.6) translate(-32 -32)" fill="none" stroke="#f5f5f7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="20" y1="12" x2="20" y2="52"/><line x1="32" y1="12" x2="32" y2="52"/><line x1="44" y1="12" x2="44" y2="52"/><circle cx="20" cy="24" r="5" fill="#f5f5f7" stroke="none"/><circle cx="32" cy="38" r="5" fill="#f5f5f7" stroke="none"/><circle cx="44" cy="18" r="5" fill="#f5f5f7" stroke="none"/></g>
+  <text x="600" y="480" font-size="76" font-weight="600" text-anchor="middle" fill="#f5f5f7" font-family="-apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif" letter-spacing="-2">レバレッジ点検</text>
 </svg>
