@@ -1,16 +1,16 @@
-// Colors — バイオレット（テコ・増幅） + アンバー（次の一歩・行動）
-$color-bg: #f4f2fb;
+// Colors — アリザリンレッド（ブランドアクセント。OGPサムネイルと統一） + アンバー（次の一歩・行動）
+$color-bg: #f7f7f8;
 $color-surface: #ffffff;
-$color-surface-2: #ece8f7;
-$color-surface-3: #e0d9f2;
-$color-primary: #6d28d9;
-$color-primary-hover: #5b21b6;
+$color-surface-2: #f1f2f4;
+$color-surface-3: #e5e7eb;
+$color-primary: #e74c3c;
+$color-primary-hover: #c0392b;
 $color-accent: #f59e0b;
 $color-accent-hover: #d97706;
 $color-danger: #dc2626;
-$color-text: #1e1b2e;
-$color-text-muted: #6b6786;
-$color-border: #ddd6f0;
+$color-text: #1d1d1f;
+$color-text-muted: #6b6b70;
+$color-border: #e6e6e6;
 
 // Quadrant tones
 $color-go: #16a34a; // 今すぐやる
@@ -22,7 +22,7 @@ $color-trim: #dc2626; // やめる・減らす・任せる
 $color-success: #16a34a;
 
 // Typography
-$font-family: 'Noto Sans JP', sans-serif;
+$font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
 $font-size-xs: 11px;
 $font-size-sm: 13px;
 $font-size-base: 15px;
