@@ -1,6 +1,6 @@
 import { onAuthChange, loginWithGoogle, logout } from './auth';
 import {
-  showToast, openOverlay, closeOverlay, textEl, formatDay,
+  showToast, openOverlay, closeOverlay, textEl, iconTextEl, formatDay,
 } from './ui';
 import { submitFeedback } from './feedback';
 import {
@@ -140,7 +140,7 @@ function updateLiveVerdict(): void {
   liveVerdict.innerHTML = '';
   liveVerdict.append(
     textEl('span', 'live-verdict__pct', `レバレッジ度 ${pct}%`),
-    textEl('span', `live-verdict__quad live-verdict__quad--${q.tone}`, `${q.icon} ${q.label}`),
+    iconTextEl('span', `live-verdict__quad live-verdict__quad--${q.tone}`, q.icon, q.label),
   );
 }
 
@@ -283,7 +283,7 @@ function renderMatrixSection(): void {
     const row = document.createElement('div');
     row.className = `quad-chip quad-chip--${q.tone}`;
     row.append(
-      textEl('span', 'quad-chip__icon', q.icon),
+      iconTextEl('span', 'quad-chip__icon', q.icon, ''),
       textEl('span', 'quad-chip__label', q.label),
       textEl('span', 'quad-chip__count', String(counts[q.key])),
     );
@@ -324,7 +324,7 @@ function renderItemCard(item: Item): HTMLElement {
   const head = document.createElement('div');
   head.className = 'item-card__head';
   head.append(textEl('span', 'item-card__title', item.title));
-  head.append(textEl('span', `item-card__quad item-card__quad--${q.tone}`, `${q.icon} ${q.label}`));
+  head.append(iconTextEl('span', `item-card__quad item-card__quad--${q.tone}`, q.icon, q.label));
   card.append(head);
 
   // meters
@@ -366,7 +366,7 @@ function renderItemCard(item: Item): HTMLElement {
   if (hints.length > 0) {
     const box = document.createElement('div');
     box.className = 'hint-box';
-    box.append(textEl('div', 'hint-box__head', '💡 効かせるための問いかけ'));
+    box.append(iconTextEl('div', 'hint-box__head', '<svg width="16" height="16" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px"><path d="M32 10 A14 14 0 0 1 40 34 Q36 38 36 44 H28 Q28 38 24 34 A14 14 0 0 1 32 10 Z"/><line x1="27" y1="50" x2="37" y2="50"/><line x1="29" y1="56" x2="35" y2="56"/></svg>', '効かせるための問いかけ'));
     hints.forEach((h) => {
       const row = document.createElement('div');
       row.className = 'hint-box__row';
@@ -382,11 +382,13 @@ function renderItemCard(item: Item): HTMLElement {
   const footer = document.createElement('div');
   footer.className = 'item-card__footer';
 
-  const editBtn = textEl('button', 'btn btn--ghost btn--sm', '✏️ 見直す');
+  const editBtn = iconTextEl('button', 'btn btn--ghost btn--sm', '<svg width="14" height="14" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M42 12 L52 22 L24 50 L12 52 L14 40 Z"/><path d="M38 16 L48 26"/></svg>', '見直す');
   editBtn.setAttribute('type', 'button');
   editBtn.addEventListener('click', () => startEdit(item));
 
-  const archiveBtn = textEl('button', 'btn btn--ghost btn--sm', item.archived ? '↩ 戻す' : '📦 アーカイブ');
+  const archiveBtn = item.archived
+    ? textEl('button', 'btn btn--ghost btn--sm', '↩ 戻す')
+    : iconTextEl('button', 'btn btn--ghost btn--sm', '<svg width="14" height="14" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M10 20 L32 10 L54 20 L32 30 Z"/><path d="M10 20 V46 L32 56 V30"/><path d="M54 20 V46 L32 56"/></svg>', 'アーカイブ');
   archiveBtn.setAttribute('type', 'button');
   archiveBtn.addEventListener('click', () => {
     if (!currentUid) return;
@@ -394,7 +396,7 @@ function renderItemCard(item: Item): HTMLElement {
       .catch(() => showToast('更新に失敗しました'));
   });
 
-  const delBtn = textEl('button', 'btn btn--ghost btn--sm is-danger', '🗑 削除');
+  const delBtn = iconTextEl('button', 'btn btn--ghost btn--sm is-danger', '<svg width="14" height="14" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M14 18 H50"/><path d="M22 18 V12 Q22 10 24 10 H40 Q42 10 42 12 V18"/><path d="M18 18 L21 52 Q21 54 23 54 H41 Q43 54 43 52 L46 18"/><line x1="26" y1="26" x2="27" y2="46"/><line x1="38" y1="26" x2="37" y2="46"/></svg>', '削除');
   delBtn.setAttribute('type', 'button');
   delBtn.addEventListener('click', () => {
     pendingDelete = { type: 'item', id: item.id, label: item.title };
@@ -441,7 +443,7 @@ function renderReview(): void {
     row.append(textEl('span', 'snap-row__count', `${snap.itemCount}件`));
     const trim = snap.quadrantCounts.trim;
     row.append(textEl('span', 'snap-row__trim', `やめる候補 ${trim}`));
-    const del = textEl('button', 'icon-btn is-danger', '🗑');
+    const del = iconTextEl('button', 'icon-btn is-danger', '<svg width="16" height="16" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18 H50"/><path d="M22 18 V12 Q22 10 24 10 H40 Q42 10 42 12 V18"/><path d="M18 18 L21 52 Q21 54 23 54 H41 Q43 54 43 52 L46 18"/><line x1="26" y1="26" x2="27" y2="46"/><line x1="38" y1="26" x2="37" y2="46"/></svg>', '');
     del.setAttribute('type', 'button');
     del.setAttribute('aria-label', '記録を削除');
     del.addEventListener('click', () => {

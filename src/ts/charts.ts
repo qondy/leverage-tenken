@@ -51,10 +51,10 @@ export function renderMatrix(items: Item[], onPick: (item: Item) => void): SVGSV
     t.textContent = text;
     svg.append(t);
   };
-  label((p0 + mid) / 2, p0 + 16, '🚀 今すぐ');
-  label((mid + p1) / 2, p0 + 16, '🏗 仕組み化');
-  label((p0 + mid) / 2, p1 - 8, '☕ スキマで');
-  label((mid + p1) / 2, p1 - 8, '✂️ やめる/任せる');
+  label((p0 + mid) / 2, p0 + 16, '今すぐ');
+  label((mid + p1) / 2, p0 + 16, '仕組み化');
+  label((p0 + mid) / 2, p1 - 8, 'スキマで');
+  label((mid + p1) / 2, p1 - 8, 'やめる/任せる');
 
   // 軸タイトル
   const axX = el('text', { x: (p0 + p1) / 2, y: 316, class: 'matrix-axis' });

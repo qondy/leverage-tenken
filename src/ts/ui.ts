@@ -22,6 +22,18 @@ export function textEl(tag: string, className: string, text: string): HTMLElemen
   return el;
 }
 
+/** 固定の(開発者定義の)線画アイコンSVG + ラベルテキストを表示する要素を作る。
+ *  アイコンはコンパイル時定数のみを渡すこと(innerHTMLを使うのはアイコン部分のみで、labelは常にtextContent扱い)。 */
+export function iconTextEl(tag: string, className: string, iconSvg: string, label: string): HTMLElement {
+  const el = document.createElement(tag);
+  if (className) el.className = className;
+  const iconSpan = document.createElement('span');
+  iconSpan.className = 'inline-icon';
+  iconSpan.innerHTML = iconSvg;
+  el.append(iconSpan, document.createTextNode(` ${label}`));
+  return el;
+}
+
 export function formatDate(d: Date): string {
   const y = d.getFullYear();
   const m = String(d.getMonth() + 1).padStart(2, '0');
