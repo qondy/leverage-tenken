@@ -15,6 +15,9 @@ import {
 } from './snapshots';
 import { renderMatrix, renderTrend } from './charts';
 import { AxisKey, AxisScores, Item, QuadrantKey, Snapshot } from './types';
+import { initClickTracking } from './analytics';
+
+initClickTracking();
 
 // ============================================================
 // DOM refs
